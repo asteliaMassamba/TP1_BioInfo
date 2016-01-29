@@ -1,0 +1,20 @@
+
+Dans le terminal: emacs .bashrc
+Dans le fichier qui s'ouvre : export http_proxy= http://cache-etu.univ-lille1.fr:3128
+			      export https_proxy= http://cache-etu.univ-lille1.fr:3128
+
+
+Commandes Git :
+Dans le terminal : git clone bidule_url.git
+                   git pull
+                   git push
+                   git commit -am "bidule"
+                   git status
+                   git add bidule.typeFichier
+
+
+
+
+
+
+
