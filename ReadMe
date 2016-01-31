@@ -1,4 +1,6 @@
 
+Pour contourner l'interdiction de la copie d'un https.
+
 Dans le terminal: emacs .bashrc
 Dans le fichier qui s'ouvre : export http_proxy= http://cache-etu.univ-lille1.fr:3128
 			      export https_proxy= http://cache-etu.univ-lille1.fr:3128
