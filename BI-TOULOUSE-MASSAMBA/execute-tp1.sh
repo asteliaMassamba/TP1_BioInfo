@@ -39,5 +39,7 @@ echo random mutation 3eme execution
 
 java RandomMutations 2 $FILE1
 echo
+echo réponses aux question
+
 cd ..
 $SHELL
