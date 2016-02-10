@@ -8,6 +8,14 @@ public class KmersSpacedOperation {
 	private ArrayList<String> common;
 	
 	
+	public KmersSpacedOperation(String graine, String s1, ReadFile f){
+		ListSpacedKmers l=new ListSpacedKmers();
+		tab1=f.getTab();
+		int longueur = graine.length();
+		kmer1=l.listNoDoub(longueur,tab1.get(1).get(0));
+		kmer2=l.listNoDoub(longueur, s1);
+		compare();
+	}
 	public KmersSpacedOperation(String[] args) {
 		int longueur= args[0].length();
 		ReadFile f1 = new ReadFile(args[1]);

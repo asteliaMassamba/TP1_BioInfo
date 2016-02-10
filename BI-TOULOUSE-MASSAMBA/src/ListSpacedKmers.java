@@ -18,6 +18,7 @@ public class ListSpacedKmers {
 		kmer1=list(longueur,tab1.get(1).get(0));
 		
 		kmer1=interpret(kmer1, args[0]);
+		afficherKmer(kmer1);
 		
 	}
 	
@@ -73,6 +74,10 @@ public class ListSpacedKmers {
 		for (String string : kmer1) {
 			System.out.println(string);
 		}
+	}
+	
+	public static ArrayList<String> getKmer1() {
+		return kmer1;
 	}
 }
 
