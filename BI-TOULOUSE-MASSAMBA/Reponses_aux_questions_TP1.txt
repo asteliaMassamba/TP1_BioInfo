@@ -1,0 +1,91 @@
+
+Question 5
+	
+	java PrintFastastats ../data/phage-lambda.fasta
+	java PrintFastastats ../data/ebola-t.fasta
+	java PrintFastastats ../data/ebola-z.fasta
+
+	Les longueurs calculees correspondent aux longueurs attendues
+
+
+
+
+
+Question 9
+
+	java RatioCommonKmers 4 ../data/phage-lambda.fasta ../data/ebola-z.fasta
+	java RatioCommonKmers 8 ../data/phage-lambda.fasta ../data/ebola-z.fasta
+	java RatioCommonKmers 12 ../data/phage-lambda.fasta ../data/ebola-z.fasta
+	java RatioCommonKmers 16 ../data/phage-lambda.fasta ../data/ebola-z.fasta
+	java RatioCommonKmers 18 ../data/phage-lambda.fasta ../data/ebola-z.fasta
+
+
+	- ebola-z.fasta vs phage.fasta
+	
+	kmers longueur 4: 1.0
+	kmers longueur 8 : 0.5
+	kmers longueur 12 : environ 0.003
+	kmers longueur 16 : 0
+	kmers longueur 18 : 0
+
+	java RatioCommonKmers 4 ../data/ebola-t.fasta ../data/ebola-z.fasta
+	java RatioCommonKmers 8 ../data/ebola-t.fasta ../data/ebola-z.fasta
+	java RatioCommonKmers 12 ../data/ebola-t.fasta ../data/ebola-z.fasta
+	java RatioCommonKmers 16 ../data/ebola-t.fasta ../data/ebola-z.fasta
+	java RatioCommonKmers 18 ../data/ebola-t.fasta ../data/ebola-z.fasta
+
+	- ebola-z.fasta vs ebola-t.fasta
+	
+	kmers longueur 4 : 1.0
+	kmers longueur 8 : environ 0.352
+	kmers longueur 12 : environ 0.026
+	kmers longueur 16 : environ 0.012
+	kmers longueur 18 : 0.008
+
+	On observe le fait que plus la longueur d'un kmer augmente, moins le ratio est eleve. 
+	Le ratio decroit plus vite dans le premier cas que dans le second.
+	On peut en deduire que le virus ebola-z est plus proche du virus ebola-t que le virus phage-lambda.
+	On peut donc supposer que l'ancetre communs des deux souche d'ébola est plus proche que celui avec phage.
+
+
+
+Question 11
+
+	echo ">ebola-mutant-0 " >../ebola-mutant-0.fasta
+	java RandomMutations 0 ../data/ebola-z.fasta >>../ebola-mutant-0.fasta
+	
+	echo ">ebola-mutant-10 " >../ebola-mutant-10.fasta
+	java RandomMutations 10 ../data/ebola-z.fasta >>../ebola-mutant-10.fasta
+	
+	echo ">ebola-mutant-100 " >../ebola-mutant-100.fasta
+	java RandomMutations 100 ../data/ebola-z.fasta >>../ebola-mutant-100.fasta
+	
+	echo ">ebola-mutant-1000 " >../ebola-mutant-1000.fasta
+	java RandomMutations 1000 ../data/ebola-z.fasta >>../ebola-mutant-1000.fasta
+	
+	echo ">ebola-mutant-10000 " >../ebola-mutant-10000.fasta
+	java RandomMutations 10000 ../data/ebola-z.fasta >>../ebola-mutant-10000.fasta
+	
+	java RatioCommonKmers 4 ../ebola-mutant-0.fasta ../data/ebola-z.fasta
+	java RatioCommonKmers 8 ../ebola-mutant-0.fasta ../data/ebola-z.fasta
+	java RatioCommonKmers 12 ../ebola-mutant-0.fasta ../data/ebola-z.fasta
+	
+	java RatioCommonKmers 4 ../ebola-mutant-10.fasta ../data/ebola-z.fasta
+	java RatioCommonKmers 8 ../ebola-mutant-10.fasta ../data/ebola-z.fasta
+	java RatioCommonKmers 12 ../ebola-mutant-10.fasta ../data/ebola-z.fasta
+	
+	java RatioCommonKmers 4 ../ebola-mutant-100.fasta ../data/ebola-z.fasta
+	java RatioCommonKmers 8 ../ebola-mutant-100.fasta ../data/ebola-z.fasta
+	java RatioCommonKmers 12 ../ebola-mutant-100.fasta ../data/ebola-z.fasta
+	
+	java RatioCommonKmers 4 ../ebola-mutant-1000.fasta ../data/ebola-z.fasta
+	java RatioCommonKmers 8 ../ebola-mutant-1000.fasta ../data/ebola-z.fasta
+	java RatioCommonKmers 12 ../ebola-mutant-1000.fasta ../data/ebola-z.fasta
+	
+	java RatioCommonKmers 4 ../ebola-mutant-10000.fasta ../data/ebola-z.fasta
+	java RatioCommonKmers 8 ../ebola-mutant-10000.fasta ../data/ebola-z.fasta
+	java RatioCommonKmers 12 ../ebola-mutant-10000.fasta ../data/ebola-z.fasta
+	
+	on remarque que plus le nombre de mutation est important, moins les sequences sont proches.
+	on peut donc en déduire que plus le nombre de mutation est important plus le mutan est éloigner génétiquement de son ancétre.
+
